@@ -14,7 +14,7 @@ install:
   - pip install -r requirements-dev.txt
   - wget http://madx.web.cern.ch/madx/releases/last-rel/madx-linux64-gnu
   - mv madx-linux64-gnu madx-dev
-  # - chmod a+x madx
+  - chmod a+x madx-dev
 
 
 script:
