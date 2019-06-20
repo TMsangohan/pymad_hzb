@@ -26,7 +26,7 @@ script:
   - coverage run -m pytest  # Run the tests and check for test coverage.
   - coverage report -m  # Generate test coverage report.
   - codecov  # Upload the report to codecov.
-  - flake8 --max-line-length=120  --ignore=E712,E121,E123,E126,E226,E24,E704,W503,W504,E741,F841 # Enforce code style (but relax line length limit a bit).
+  - flake8 --max-line-length=120  --ignore=E712,E121,E123,E126,E226,E24,E704,W503,W504,E741,F841,W605 # Enforce code style (but relax line length limit a bit).
   - set -e
   - make -C docs html  # Build the documentation.
   - pip install doctr

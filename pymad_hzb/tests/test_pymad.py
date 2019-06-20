@@ -6,7 +6,7 @@ import datetime
 
 import pymad_hzb
 import pymad_hzb.pymadhzb as pm
-from  pymad_hzb.pymadhzb import IllegalArgumentError
+from pymad_hzb.pymadhzb import IllegalArgumentError
 
 
 @pytest.fixture(scope="session")

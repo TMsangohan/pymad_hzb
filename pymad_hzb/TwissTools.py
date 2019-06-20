@@ -42,11 +42,11 @@ def get_tfsheader(tfsfile):
 def get_twissdata(tfsfile):
     """
     Method to get the table data of the twiss data
-    
+
     Parameters:
     -----------
     tfsfile: str
-        Twiss file 
+        Twiss file
 
     Returns:
     --------
@@ -64,7 +64,7 @@ def get_survey_columns(tfssurveyfile):
     Parameters:
     -----------
     tfsfile: str
-        Twiss survey file 
+        Twiss survey file
 
     Returns:
     --------
@@ -82,8 +82,8 @@ def get_survey_data(tfssurveyfile):
     Parameters:
     -----------
     tfsfile: str
-        Twiss survey file 
-
+        Twiss survey file
+        
     Returns:
     --------
     data : pandas data frame
