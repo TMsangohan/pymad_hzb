@@ -1,6 +1,6 @@
 import pytest
 
-from pymad_hzbsubl.DateTools import is_date
+from pymad_hzb.DateTools import is_date
 
 
 def test____is_date___no_date____expectFalse():
