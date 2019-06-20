@@ -12,6 +12,10 @@ install:
   - pip install .
   # Install extra requirements for running tests and building docs.
   - pip install -r requirements-dev.txt
+  - wget http://madx.web.cern.ch/madx/releases/last-rel/madx-linux64-gnu
+  - mv madx-linux64-gnu madx-dev
+  - chmod a+x madx
+
 
 script:
   - coverage run -m pytest  # Run the tests and check for test coverage.
