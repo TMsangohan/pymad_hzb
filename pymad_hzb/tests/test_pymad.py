@@ -8,6 +8,7 @@ import pymad_hzb
 import pymad_hzb.pymadhzb as pm
 from  pymad_hzb.pymadhzb import IllegalArgumentError
 
+
 @pytest.fixture(scope="session")
 def maddir(tmpdir_factory):
     path = tmpdir_factory.mktemp('mad')
@@ -26,6 +27,7 @@ def test___create_instance_no_valid_madprogram____expectexception():
                        match='Given madx executable not found.'):
         madx = pm.Madx('madnot')
 
+
 def test___create_instance__no_date_given___expect_today_pass(maddir):
     madx = pm.Madx('madx-dev', maddir=maddir)
     assert madx.date == "{:%Y-%m-%d}".format(datetime.date.today())
@@ -41,6 +43,7 @@ def test___create_instance__no_date_given___expect_today_pass(maddir):
     assert madx.twissdir == os.path.join(maddir, madx.date, 'twiss')
     assert madx.plotdir == os.path.join(maddir, madx.date, 'plots')
     assert madx.inputstring == ''
+
 
 def test___create_instance__date_given___expect_today_pass(maddir):
     madx = pm.Madx('madx-dev', maddir=maddir, date="2017-02-01")
@@ -280,7 +283,7 @@ def test___install_element_missing___expect_exception(maddir):
 
 def test___slice___expect_pass(maddir):
     madx = pm.Madx('madx-dev', maddir=maddir)
-    madx.slice('ring',quadrupole=10)
+    madx.slice('ring', quadrupole=10)
     print(madx.inputstring)
     assert madx.inputstring == "USE, SEQUENCE=ring;\n" \
                                "SELECT, FLAG=MAKETHIN, class=quadrupole , SLICE=10;\n" \

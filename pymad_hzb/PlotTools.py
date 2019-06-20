@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import pylab
-import matplotlib.dates as mdates
+# import matplotlib.dates as mdates
 import matplotlib
 import numpy as np
 import matplotlib.font_manager as font_manager
@@ -89,11 +89,12 @@ def new_plot_elems_madx(fig, ax, lat, s_point=0, nturns=1, y_scale=1, legend=Tru
         # type = elem.type
         scale = dict_copy[elem['KEYWORD']]["scale"]
         color = dict_copy[elem['KEYWORD']]["color"]
-        label = dict_copy[elem['KEYWORD']]["label"]
+        # label = dict_copy[elem['KEYWORD']]["label"]
         ecolor = dict_copy[elem['KEYWORD']]["edgecolor"]
         ampl = 1
         s_coord = np.array(
-            [L + elem.L / 2. - l / 2., L + elem.L / 2. - l / 2., L + elem.L / 2. + l / 2., L + elem.L / 2. + l / 2.,
+            [L + elem.L / 2. - l / 2., L + elem.L / 2. - l / 2., L + elem.L / 2. + l / 2.,
+             L + elem.L / 2. + l / 2.,
              L + elem.L / 2. - l / 2.]) + s_point
 
         if elem['KEYWORD'] == 'QUADRUPOLE':
@@ -144,7 +145,8 @@ def new_plot_elems_madx(fig, ax, lat, s_point=0, nturns=1, y_scale=1, legend=Tru
             dict_copy[elem['KEYWORD']]["label"] = ""
 
         else:
-            point, = ax.fill(s_coord, np.array([-1, 1, 1, -1, -1]) * ampl * scale * y_scale, color, edgecolor=ecolor,
+            point, = ax.fill(s_coord, np.array([-1, 1, 1, -1, -1]) * ampl * scale * y_scale, color,
+                             edgecolor=ecolor,
                              alpha=alpha)
         annotation = ax.annotate(elem['KEYWORD'] + ": " + elem.NAME,
                                  xy=(L + l / 2., 0),  # xycoords='data',
@@ -175,13 +177,16 @@ def new_plot_elems_madx(fig, ax, lat, s_point=0, nturns=1, y_scale=1, legend=Tru
         ax.legend(loc='upper center', ncol=ncols, shadow=False, prop=font_manager.FontProperties(size=15))
 
 
-def plotTwissTriple(twissdata, cols0=['X', 'Y'], cols1=['BETX', 'BETY'], cols2=['DX', 'DY'], fontsize=12, legend=True):
+def plotTwissTriple(twissdata, cols0=['X', 'Y'], cols1=['BETX', 'BETY'], cols2=['DX', 'DY'], fontsize=12,
+                    legend=True):
     if cols0:
         if len(cols0) > 2 or len(cols1) > 2 or len(cols2) > 2:
-            raise PlotOverLoadError('Too much data for single grid, keep the number of cols per grid lower than 2.')
+            raise PlotOverLoadError(
+                'Too much data for single grid, keep the number of cols per grid lower than 2.')
     else:
         if len(cols1) > 2 or len(cols2) > 2:
-            raise PlotOverLoadError('Too much data for single grid, keep the number of cols per grid lower than 2.')
+            raise PlotOverLoadError(
+                'Too much data for single grid, keep the number of cols per grid lower than 2.')
     matplotlib.rcParams.update({'font.size': fontsize})
 
     x = np.arange(len(twissdata))
@@ -275,7 +280,8 @@ def plotTwissTriple(twissdata, cols0=['X', 'Y'], cols1=['BETX', 'BETY'], cols2=[
 def plotCompareOptics(twissdata1, twissdata2, cols0=['BETX', 'BETY'], fontsize=12, legend=True):
     if cols0:
         if len(cols0) > 2:
-            raise PlotOverLoadError('Too much data for single grid, keep the number of cols per grid lower than 2.')
+            raise PlotOverLoadError(
+                'Too much data for single grid, keep the number of cols per grid lower than 2.')
 
     matplotlib.rcParams.update({'font.size': fontsize})
 

@@ -1,12 +1,9 @@
 import os
 import subprocess
 from datetime import datetime
-import pandas as pd
-import numpy as np
 import logging
 
 from os.path import expanduser
-from shutil import copyfile
 
 from .DateTools import is_date
 
@@ -20,11 +17,11 @@ def is_tool(name):
     Parameters:
     -----------
     name : str
-    	file/app/execution file
+        file/app/execution file
 
     Returns:
-    --------
-    True/False
+        -------
+    rue/False
 
     """
     from shutil import which

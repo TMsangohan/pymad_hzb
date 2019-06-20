@@ -10,7 +10,7 @@ def get_twisscolumns(tfsfile):
     -----------
     tfsfile : str
         Twiss file
-    
+
     Returns:
     --------
     columns : list of str
@@ -27,7 +27,7 @@ def get_tfsheader(tfsfile):
     Parameters:
     -----------
     tfsfile: str
-        Twiss file 
+        Twiss file
 
     Returns:
     --------
