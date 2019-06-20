@@ -1,1 +1,8 @@
 # List required packages in this file, one per line.
+dateutil
+numpy
+matplotlib
+pylab
+subprocess
+logging
+shutil
