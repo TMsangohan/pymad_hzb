@@ -15,6 +15,7 @@ install:
   - wget http://madx.web.cern.ch/madx/releases/last-rel/madx-linux64-gnu
   - mv madx-linux64-gnu madx-dev
   - chmod a+x madx-dev
+  - export PATH=$PATH:$PWD
 
 
 script:
