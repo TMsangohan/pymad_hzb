@@ -8,7 +8,7 @@ import logging
 from os.path import expanduser
 from shutil import copyfile
 
-from pymad_hzb.utils.DateTools import is_date
+from .DateTools import is_date
 
 
 # ref : https://stackoverflow.com/questions/11210104/check-if-a-program-exists-from-a-python-script
