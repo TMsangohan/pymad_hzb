@@ -520,4 +520,3 @@ class Madx:
 
         except RuntimeError:
             logger.exception("MADX Failed")
-           
