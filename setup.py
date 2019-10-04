@@ -34,7 +34,7 @@ with open(path.join(here, 'requirements.txt')) as requirements_file:
 
 
 setup(
-    name='pymad_hzb',
+    name='pymadhzb',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description="Package for running MADX from python (and jupyter notebooks)",
