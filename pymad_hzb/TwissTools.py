@@ -53,7 +53,7 @@ def get_twissdata(tfsfile):
     data : pandas data frame
         frame containing the Twiss data
     """
-    data = pd.read_csv(tfsfile, delim_whitespace=True, skiprows=47, index_col=None, header=None)
+    data = pd.read_csv(tfsfile, delim_whitespace=True, skiprows=48, index_col=None, header=None)
     data.columns = get_twisscolumns(tfsfile)
     return data
 

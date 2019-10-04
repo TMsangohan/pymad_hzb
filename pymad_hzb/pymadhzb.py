@@ -390,7 +390,7 @@ class Madx:
             self.inputstring += 'TWISS, SEQUENCE = {sequence}, file = \'{file}\''.format(**kwargs)
             self.updateoutput('twiss', '{file}'.format(**kwargs))
         else:
-            self.inputstring += ('TWISS, SEQUENCE = {sequence}, file = \'' + self.twissdir
+            self.inputstring += ('TWISS, SEQUENCE = {sequence}, file = \'' + self.twissdir + '/'
                                  + self.datetime + '-twiss.tfs\'').format(**kwargs)
             self.updateoutput('twiss', self.twissdir + self.datetime + '-twiss.tfs')
 
