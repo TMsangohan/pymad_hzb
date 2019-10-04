@@ -16,7 +16,7 @@ def get_twisscolumns(tfsfile):
     columns : list of str
         list of column names available in the Twiss file
     """
-    cols = pd.read_csv(tfsfile, delim_whitespace=True, skiprows=range(45), nrows=2, index_col=None)
+    cols = pd.read_csv(tfsfile, delim_whitespace=True, skiprows=range(46), nrows=2, index_col=None)
     return list(cols.columns[1:].values)
 
 
