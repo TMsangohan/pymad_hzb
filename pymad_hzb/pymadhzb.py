@@ -392,7 +392,7 @@ class Madx:
         else:
             self.inputstring += ('TWISS, SEQUENCE = {sequence}, file = \'' + self.twissdir + '/'
                                  + self.datetime + '-twiss.tfs\'').format(**kwargs)
-            self.updateoutput('twiss', self.twissdir + self.datetime + '-twiss.tfs')
+            self.updateoutput('twiss', self.twissdir + '/' + self.datetime + '-twiss.tfs')
 
         if 'table' in kwargs.keys():
             self.inputstring += ', table={table}'.format(**kwargs)
